@@ -1,0 +1,519 @@
+/* ==============================
+   ROLE & PRIVILEGE
+   RAY BOUQUET
+============================== */
+
+.role-page {
+    width: 100%;
+}
+
+
+/* ==============================
+   FLASH
+============================== */
+
+.flash {
+    margin-bottom: 20px;
+    padding: 13px 17px;
+
+    border: 2px solid;
+    border-radius: 14px;
+
+    font-size: .88rem;
+    font-weight: 500;
+}
+
+.flash-ok {
+    color: #28633A;
+    background: #EAF7ED;
+    border-color: #9CCDA8;
+}
+
+.flash-error {
+    color: var(--red);
+    background: var(--candy-pale);
+    border-color: var(--candy);
+}
+
+
+/* ==============================
+   SECTION HEADING
+============================== */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 17px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    color: var(--red);
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.section-heading p {
+    margin: 4px 0 0;
+
+    color: rgba(100, 13, 20, .58);
+
+    font-size: .82rem;
+}
+
+
+/* ==============================
+   ROLE SELECTOR
+============================== */
+
+.role-selector {
+    margin-bottom: 25px;
+    padding: 22px;
+
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 20px;
+
+    box-shadow: 5px 5px 0 var(--beige);
+}
+
+.role-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 75px;
+    padding: 13px;
+
+    color: var(--cherry);
+    background: var(--cream);
+
+    border: 2px solid var(--beige);
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    transition:
+        transform .15s,
+        background .15s,
+        border-color .15s,
+        box-shadow .15s;
+}
+
+.role-card:hover {
+    transform: translateY(-2px);
+
+    background: var(--candy-pale);
+    border-color: var(--candy);
+
+    box-shadow: 3px 3px 0 var(--beige);
+}
+
+.role-card.active {
+    color: var(--beige);
+    background: var(--red);
+
+    border-color: var(--cherry);
+
+    box-shadow: 4px 4px 0 var(--beige);
+}
+
+.role-card-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cherry);
+    background: var(--candy);
+
+    border: 2px solid var(--cherry);
+    border-radius: 12px;
+
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.role-card.active .role-card-icon {
+    color: var(--cherry);
+    background: var(--beige);
+}
+
+.role-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.role-card-info strong {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.role-card-info span {
+    font-size: .73rem;
+    opacity: .7;
+}
+
+
+/* ==============================
+   PRIVILEGE CONTAINER
+============================== */
+
+.privilege-form {
+    padding: 24px;
+
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 20px;
+
+    box-shadow: 5px 5px 0 var(--beige);
+}
+
+
+/* ==============================
+   PRIVILEGE HEADER
+============================== */
+
+.privilege-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+    margin-bottom: 22px;
+
+    border-bottom: 2px dashed var(--beige);
+}
+
+.current-role {
+    display: inline-block;
+
+    margin-bottom: 5px;
+    padding: 4px 9px;
+
+    color: var(--cherry);
+    background: var(--beige);
+
+    border-radius: 999px;
+
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+}
+
+.privilege-header h2 {
+    margin: 0;
+
+    color: var(--red);
+
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.privilege-header p {
+    margin: 4px 0 0;
+
+    color: rgba(100, 13, 20, .58);
+
+    font-size: .8rem;
+}
+
+.privilege-total {
+    min-width: 125px;
+    padding: 12px 16px;
+
+    text-align: center;
+
+    background: var(--candy-pale);
+
+    border: 2px solid var(--candy);
+    border-radius: 14px;
+}
+
+.privilege-total strong {
+    display: block;
+
+    color: var(--red);
+
+    font-size: 1.35rem;
+}
+
+.privilege-total span {
+    color: rgba(100, 13, 20, .62);
+
+    font-size: .7rem;
+}
+
+
+/* ==============================
+   PRIVILEGE GROUP
+============================== */
+
+.privilege-groups {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.privilege-group {
+    overflow: hidden;
+
+    background: var(--cream);
+
+    border: 2px solid var(--beige);
+    border-radius: 16px;
+}
+
+.group-title {
+    padding: 12px 15px;
+
+    background: var(--beige-light);
+
+    border-bottom: 2px solid var(--beige);
+}
+
+.group-title h3 {
+    margin: 0;
+
+    color: var(--cherry);
+
+    font-size: .88rem;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   PRIVILEGE ITEM
+============================== */
+
+.privilege-list {
+    padding: 8px;
+}
+
+.privilege-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 58px;
+    padding: 9px 10px;
+
+    cursor: pointer;
+
+    border-radius: 11px;
+
+    transition: background .15s;
+}
+
+.privilege-item:hover {
+    background: var(--candy-pale);
+}
+
+.privilege-item input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+.custom-check {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    background: white;
+
+    border: 2px solid var(--beige);
+
+    border-radius: 7px;
+
+    transition: .15s;
+}
+
+.privilege-item input:checked + .custom-check {
+    background: var(--red);
+    border-color: var(--cherry);
+}
+
+.privilege-item input:checked + .custom-check::after {
+    content: "✓";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -53%);
+
+    color: var(--beige);
+
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.privilege-item input:focus-visible + .custom-check {
+    outline: 3px solid var(--candy);
+}
+
+.privilege-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.privilege-text strong {
+    color: var(--cherry);
+
+    font-size: .82rem;
+    font-weight: 500;
+}
+
+.privilege-text small {
+    color: rgba(100, 13, 20, .48);
+
+    font-size: .68rem;
+}
+
+
+/* ==============================
+   FOOTER FORM
+============================== */
+
+.form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-top: 22px;
+    padding-top: 20px;
+
+    border-top: 2px dashed var(--beige);
+}
+
+.permission-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.permission-info strong {
+    color: var(--cherry);
+
+    font-size: .84rem;
+}
+
+.permission-info span {
+    color: rgba(100, 13, 20, .55);
+
+    font-size: .72rem;
+}
+
+.btn-save {
+    min-width: 155px;
+    padding: 11px 20px;
+
+    color: var(--cherry);
+    background: var(--candy);
+
+    border: 2px solid var(--cherry);
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 3px 3px 0 var(--beige);
+
+    transition: .15s;
+}
+
+.btn-save:hover {
+    transform: translate(-2px, -2px);
+
+    background: var(--candy-light);
+
+    box-shadow: 5px 5px 0 var(--beige);
+}
+
+.btn-save:active {
+    transform: translate(0, 0);
+    box-shadow: 1px 1px 0 var(--beige);
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 950px) {
+
+    .role-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .privilege-groups {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .role-selector,
+    .privilege-form {
+        padding: 17px;
+        border-radius: 17px;
+    }
+
+    .role-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .privilege-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .privilege-total {
+        width: 100%;
+    }
+
+    .form-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .btn-save {
+        width: 100%;
+    }
+}

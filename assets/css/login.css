@@ -1,0 +1,543 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff8d8;
+    overflow: hidden;
+}
+
+
+/* ===== PAGE (selalu 1 layar) ===== */
+
+.page {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    background-color: #fff8d8;
+    background-image:
+        linear-gradient(45deg, #f4e6b5 25%, transparent 25%),
+        linear-gradient(-45deg, #f4e6b5 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #f4e6b5 75%),
+        linear-gradient(-45deg, transparent 75%, #f4e6b5 75%);
+    background-size: 64px 64px;
+    background-position: 0 0, 0 32px, 32px -32px, -32px 0;
+
+    position: relative;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-rows: 50px minmax(0, 1fr) 28px 50px;
+}
+
+
+/* ===== TOPBAR ===== */
+
+.topbar {
+    background: #720d18;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.brand {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    letter-spacing: 1px;
+    cursor: default;
+
+    transition: transform .25s, letter-spacing .25s;
+}
+
+.brand img {
+    width: 65px;
+    height: 38px;
+
+    object-fit: contain;
+    object-position: left center;
+
+    display: block;
+}
+
+.brand:hover {
+    transform: scale(1.05);
+    letter-spacing: 2px;
+}
+
+.top-message {
+    text-align: center;
+    transition: opacity .3s, transform .3s;
+}
+
+.top-message.change {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.contact {
+    color: #fff;
+    text-decoration: none;
+    text-align: right;
+    transition: transform .2s;
+}
+
+.contact:hover {
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+
+/* ===== MAIN ===== */
+
+.main-content {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ===== KIRI ===== */
+
+.intro {
+    position: relative;
+    padding-left: 35px;
+    transition: transform .15s ease-out;
+}
+
+.intro h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(40px, min(5vw, 9vh), 82px);
+    line-height: .9;
+    color: #bd2850;
+    font-weight: 800;
+    letter-spacing: -2px;
+    text-shadow: 4px 4px 0 #f58ca8;
+    margin-bottom: clamp(8px, 2vh, 20px);
+}
+
+.flower-decoration {
+    position: absolute;
+    left: -5px;
+    top: -30px;
+    color: #e94e78;
+    font-size: 40px;
+    transform: rotate(-12deg);
+    animation: flowerFloat 3s ease-in-out infinite;
+}
+
+@keyframes flowerFloat {
+    0%, 100% { transform: rotate(-12deg) translateY(0); }
+    50%      { transform: rotate(-5deg) translateY(-8px); }
+}
+
+.mini-tag {
+    display: inline-block;
+    background: #f58ca8;
+    color: #5e1320;
+    border: 3px solid #720d18;
+    border-radius: 30px;
+    padding: 6px 20px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 16px;
+    font-weight: 700;
+    transform: rotate(-3deg);
+    box-shadow: 4px 4px 0 #d99738;
+}
+
+
+/* ===== KARTU FOTO BUNGA ===== */
+
+.flower-card {
+    width: clamp(150px, 22vh, 190px);
+    height: clamp(175px, 28vh, 220px);
+
+    margin-top: clamp(12px, 3vh, 24px);
+    margin-left: 35px;
+
+    background: #f48ba8;
+
+    border: 7px solid #a9233a;
+
+    box-shadow: 8px 8px 0 #dc8c27;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transform: rotate(-5deg);
+
+    animation: cardFloat 4s ease-in-out infinite;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.flower-card:hover {
+    transform: rotate(-3deg) translateY(-6px);
+
+    box-shadow:
+        11px 12px 0 #dc8c27;
+}
+
+
+/* FOTO */
+
+.flower-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+
+/* TEKS DI BAWAH FOTO */
+
+.flower-caption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 9px 5px;
+
+    background: rgba(114, 13, 24, .88);
+
+    color: white;
+
+    text-align: center;
+
+    font-family: 'Baloo 2', cursive;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ANIMASI */
+
+@keyframes cardFloat {
+    0%, 100% {
+        transform: rotate(-5deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(-4deg) translateY(-5px);
+    }
+}
+
+/* ===== LOGIN ===== */
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.login-card {
+    width: 420px;
+    max-width: 100%;
+    background: #fff9e8;
+    border: 4px solid #b3263d;
+    border-radius: 28px;
+    padding: clamp(26px, 4.5vh, 40px) 36px 18px;
+    position: relative;
+    transform: rotate(1.5deg);
+    box-shadow: 8px 8px 0 #f58ca8;
+    animation: loginFloat 4s ease-in-out infinite;
+    transition: box-shadow .3s;
+}
+
+.login-card:hover {
+    box-shadow: 11px 12px 0 #f58ca8;
+}
+
+@keyframes loginFloat {
+    0%, 100% { transform: rotate(1.5deg) translateY(0); }
+    50%      { transform: rotate(1.5deg) translateY(-5px); }
+}
+
+.tape {
+    position: absolute;
+    width: 90px;
+    height: 28px;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    background: repeating-linear-gradient(
+        90deg,
+        #db9636 0,
+        #db9636 10px,
+        #f0b75b 10px,
+        #f0b75b 20px
+    );
+}
+
+.login-card h2 {
+    font-family: 'Baloo 2', cursive;
+    color: #b3263d;
+    font-size: 34px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.login-description {
+    color: #651c28;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: clamp(10px, 2vh, 18px);
+}
+
+.error-message {
+    background: #ffd7df;
+    color: #8d162a;
+    border: 2px solid #c33a52;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* ===== FORM (input terang) ===== */
+
+.form-group {
+    margin-bottom: clamp(8px, 1.8vh, 14px);
+}
+
+.form-group label {
+    display: block;
+    color: #651c28;
+    font-family: 'Baloo 2', cursive;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.form-group input {
+    width: 100%;
+    height: clamp(38px, 5.8vh, 46px);
+    padding: 0 15px;
+
+    background: #ffffff;
+    border: 3px solid #e8a3b5;
+    border-radius: 7px;
+    color: #5e1320;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+
+    transition: border .2s, box-shadow .2s, transform .2s;
+}
+
+.form-group input::placeholder {
+    color: #c9a3ab;
+}
+
+.form-group input:focus {
+    transform: translateY(-2px);
+    border-color: #bd2850;
+    box-shadow: 0 0 0 3px #f8a1b7, 4px 4px 0 #d99738;
+}
+
+
+/* ===== TOMBOL ===== */
+
+.login-card button {
+    width: 100%;
+    height: clamp(40px, 6vh, 48px);
+    margin-top: 3px;
+
+    background: #720d18;
+    color: #fff9e8;
+    border: none;
+    border-bottom: 5px solid #440811;
+    border-radius: 7px;
+
+    font-family: 'Baloo 2', cursive;
+    font-size: 18px;
+    font-weight: 800;
+
+    cursor: pointer;
+    transition: .2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card button:hover {
+    background: #b3263d;
+    transform: translateY(-2px);
+}
+
+.login-card button:active {
+    transform: translateY(1px);
+    border-bottom-width: 2px;
+}
+
+.login-card button::after {
+    content: "🌸";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    opacity: 0;
+    transform: translateY(-50%) translateX(10px);
+    transition: opacity .2s, transform .2s;
+}
+
+.login-card button:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.login-footer {
+    margin-top: 10px;
+    text-align: center;
+    color: #8b3845;
+    font-family: 'Baloo 2', cursive;
+    font-size: 13px;
+}
+
+
+/* ===== HATI ===== */
+
+.heart {
+    position: absolute;
+    right: 3%;
+    bottom: 14px;
+    color: #a9233a;
+    font-size: 36px;
+    transform: rotate(-10deg);
+    text-shadow: 3px 3px 0 #6f1725;
+    animation: heartFloat 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes heartFloat {
+    0%, 100% { transform: rotate(-10deg) translateY(0); }
+    50%      { transform: rotate(-5deg) translateY(-10px); }
+}
+
+
+/* ===== SCALLOP & FOOTER ===== */
+
+.scallop {
+    background-color: #f58ca8;
+    background-image: radial-gradient(circle at 50% 0, #f58ca8 18px, transparent 19px);
+    background-size: 40px 35px;
+}
+
+.footer {
+    background: #720d18;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ===== LAYAR PENDEK (laptop 14") ===== */
+
+@media (max-height: 700px) {
+    .page { grid-template-rows: 46px minmax(0, 1fr) 22px 40px; }
+    .flower-decoration { display: none; }
+    .login-card h2 { font-size: 30px; }
+    .login-description { font-size: 12px; }
+    .heart { display: none; }
+}
+
+@media (max-height: 600px) {
+}
+
+
+/* ===== TABLET ===== */
+
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        align-content: center;
+        gap: 12px;
+        padding: 10px 30px;
+    }
+
+    .intro {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .login-card { width: min(420px, 90vw); }
+}
+
+
+/* ===== HP ===== */
+
+@media (max-width: 600px) {
+    .page { grid-template-rows: auto minmax(0, 1fr) 24px 40px; }
+
+    .topbar {
+        grid-template-columns: 1fr;
+        gap: 2px;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .contact { text-align: center; }
+    .main-content { padding: 8px 15px; gap: 8px; }
+    .intro h1 { font-size: 36px; margin-bottom: 8px; }
+    .flower-decoration, .heart { display: none; }
+
+    .login-card {
+        padding: 26px 20px 14px;
+        animation: none;
+        transform: none;
+    }
+
+    .login-card h2 { font-size: 26px; }
+    .footer { font-size: 11px; }
+}
+
+
+/* ===== KURANGI GERAK ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,152 @@
+/* =========================================================
+   LOGOUT MODAL
+========================================================= */
+
+.logout-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(100, 13, 20, .35);
+    backdrop-filter: blur(4px);
+}
+
+.logout-modal.show {
+    display: flex;
+}
+
+.logout-box {
+    width: min(380px, 90%);
+    padding: 28px 25px;
+
+    text-align: center;
+
+    background: var(--cream);
+
+    border: 3px solid var(--cherry);
+    border-radius: 24px;
+
+    box-shadow: 6px 6px 0 var(--apricot);
+
+    animation: logoutPop .2s ease;
+}
+
+@keyframes logoutPop {
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.logout-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 12px;
+
+    background: var(--candy);
+
+    border: 2px solid var(--cherry);
+    border-radius: 50%;
+
+    color: var(--cherry);
+    font-size: 25px;
+}
+
+.logout-box h2 {
+    margin: 0 0 6px;
+
+    color: var(--cherry);
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.logout-box p {
+    margin: 0 0 20px;
+
+    color: rgba(100, 13, 20, .65);
+    font-size: 13px;
+}
+
+.logout-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.logout-cancel,
+.logout-confirm {
+    min-width: 100px;
+    padding: 9px 16px;
+
+    border-radius: 999px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: .15s;
+}
+
+.logout-cancel {
+    background: transparent;
+    color: var(--cherry);
+    border: 2px solid var(--cherry);
+}
+
+.logout-confirm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--cherry);
+    color: var(--beige);
+
+    border: 2px solid var(--cherry);
+}
+
+.logout-cancel:hover,
+.logout-confirm:hover {
+    transform: translateY(-2px);
+}
+
+.logout-cancel:hover {
+    background: var(--candy-pale);
+}
+
+.logout-confirm:hover {
+    background: var(--red);
+}
+
+@media (max-width: 480px) {
+
+    .logout-box {
+        padding: 24px 18px;
+    }
+
+    .logout-actions {
+        flex-direction: column;
+    }
+
+    .logout-cancel,
+    .logout-confirm {
+        width: 100%;
+    }
+
+}

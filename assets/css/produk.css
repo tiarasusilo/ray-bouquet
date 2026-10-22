@@ -1,0 +1,328 @@
+/* ==============================
+   HALAMAN PRODUK (tabel admin)
+   dipakai bersama dashboard.css
+============================== */
+
+.flash {
+    margin-bottom: 18px;
+    padding: 12px 16px;
+
+    border: 2px solid;
+    border-radius: 14px;
+
+    font-size: .9rem;
+}
+
+.flash-ok {
+    color: #1d6b35;
+    background: #E6F6EA;
+    border-color: #9ED3AC;
+}
+
+.flash-error {
+    color: var(--red);
+    background: var(--candy-pale);
+    border-color: var(--candy);
+}
+
+
+/* ---------- tombol ---------- */
+
+.btn {
+    height: 40px;
+    padding: 0 18px;
+
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+
+    border: 2px solid var(--cherry);
+    border-radius: 12px;
+
+    cursor: pointer;
+    transition: transform .15s, background .15s, color .15s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    height: 32px;
+    padding: 0 12px;
+    font-size: .8rem;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    color: var(--cherry);
+    background: var(--candy);
+    box-shadow: 3px 3px 0 var(--beige);
+}
+
+.btn-ghost {
+    color: var(--cherry);
+    background: white;
+}
+
+.btn-ghost:hover {
+    background: var(--beige-light);
+}
+
+.btn-danger {
+    color: var(--red);
+    background: white;
+    border-color: var(--red);
+}
+
+.btn-danger:hover {
+    color: white;
+    background: var(--red);
+}
+
+
+/* ---------- ringkasan ---------- */
+
+.stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    padding: 16px 18px;
+
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 18px;
+
+    box-shadow: 4px 4px 0 var(--beige);
+}
+
+.stat-box small {
+    display: block;
+    color: rgba(100, 13, 20, .65);
+    font-size: .8rem;
+}
+
+.stat-box strong {
+    color: var(--red);
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.stat-box strong.warn {
+    color: #B87A22;
+}
+
+
+/* ---------- tabel produk ---------- */
+
+.produk-tbl td {
+    vertical-align: middle;
+}
+
+.produk-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 240px;
+}
+
+.thumb {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: var(--beige);
+    border: 2px solid var(--cherry);
+    border-radius: 12px;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb span {
+    color: var(--red);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.produk-info {
+    min-width: 0;
+}
+
+.produk-info b {
+    display: block;
+    color: var(--cherry);
+}
+
+.produk-info small {
+    display: block;
+    max-width: 280px;
+
+    color: rgba(100, 13, 20, .6);
+    font-size: .78rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.kat-chip {
+    display: inline-block;
+    padding: 2px 11px;
+
+    color: var(--cherry);
+    background: var(--candy-pale);
+    border: 1px solid var(--candy);
+    border-radius: 999px;
+
+    font-size: .76rem;
+    font-weight: 500;
+}
+
+.stok-pill {
+    display: inline-block;
+    padding: 3px 12px;
+
+    border-radius: 999px;
+
+    font-size: .76rem;
+    font-weight: 500;
+}
+
+.stok-pill.aman  { color: #1d6b35; background: #DDF3E2; }
+.stok-pill.tipis { color: #8a5a10; background: #FBE7C2; }
+.stok-pill.habis { color: var(--red); background: #FFD9DC; }
+
+.row-aksi {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.row-aksi form {
+    display: inline;
+}
+
+
+/* ---------- form tambah / ubah ---------- */
+
+.dialog {
+    width: min(480px, 92vw);
+    max-height: 92vh;
+    margin: auto;
+    padding: 24px;
+
+    overflow-y: auto;
+
+    color: var(--cherry);
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 24px;
+
+    box-shadow: 6px 6px 0 var(--candy);
+}
+
+.dialog::backdrop {
+    background: rgba(100, 13, 20, .5);
+}
+
+.dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.dialog-head h2 {
+    color: var(--red);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.dialog-x {
+    width: 34px;
+    height: 34px;
+
+    color: var(--cherry);
+    background: transparent;
+
+    border: 2px solid var(--cherry);
+    border-radius: 10px;
+
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.field {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.field span {
+    display: block;
+    margin-bottom: 4px;
+
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.field em {
+    color: rgba(100, 13, 20, .55);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.field input,
+.field textarea,
+.field select {
+    width: 100%;
+    padding: 10px 12px;
+
+    color: var(--cherry);
+    background: var(--cream);
+
+    border: 2px solid var(--beige);
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: .92rem;
+
+    outline: 0;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+    border-color: var(--candy);
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.dialog-foot {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 6px;
+}

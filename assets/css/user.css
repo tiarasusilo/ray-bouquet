@@ -1,0 +1,635 @@
+/* ==============================
+   USER PAGE
+   RAY BOUQUET
+============================== */
+
+.flash {
+    margin-bottom: 18px;
+    padding: 12px 16px;
+    border: 2px solid;
+    border-radius: 14px;
+    font-size: .9rem;
+}
+
+.flash-ok {
+    color: #1d6b35;
+    background: #E6F6EA;
+    border-color: #9ED3AC;
+}
+
+.flash-error {
+    color: var(--red);
+    background: var(--candy-pale);
+    border-color: var(--candy);
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+.btn {
+    height: 40px;
+    padding: 0 18px;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+
+    color: var(--cherry);
+    background: white;
+
+    border: 2px solid var(--cherry);
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s,
+        background .15s,
+        color .15s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    height: 32px;
+    padding: 0 12px;
+    font-size: .8rem;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    color: var(--cherry);
+    background: var(--candy);
+    box-shadow: 3px 3px 0 var(--beige);
+}
+
+.btn-primary:hover {
+    background: var(--candy-light);
+}
+
+.btn-ghost {
+    color: var(--cherry);
+    background: white;
+}
+
+.btn-ghost:hover {
+    background: var(--beige-light);
+}
+
+.btn-danger {
+    color: var(--red);
+    background: white;
+    border-color: var(--red);
+}
+
+.btn-danger:hover {
+    color: white;
+    background: var(--red);
+}
+
+
+/* ==============================
+   STATISTICS
+============================== */
+
+.stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    padding: 18px 20px;
+
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 18px;
+
+    box-shadow: 4px 4px 0 var(--beige);
+
+    transition:
+        transform .15s,
+        box-shadow .15s;
+}
+
+.stat-box:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--candy);
+}
+
+.stat-box small {
+    display: block;
+    margin-bottom: 3px;
+
+    color: rgba(100, 13, 20, .65);
+    font-size: .8rem;
+}
+
+.stat-box strong {
+    color: var(--red);
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.stat-box strong.warn {
+    color: #B87A22;
+}
+
+
+/* ==============================
+   PANEL
+============================== */
+
+.panel-sub {
+    margin-top: 3px;
+    color: rgba(100, 13, 20, .6);
+    font-size: .82rem;
+}
+
+
+/* ==============================
+   ROLE FILTER
+============================== */
+
+.role-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+
+    border-bottom: 2px dashed var(--beige);
+}
+
+.role-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 13px;
+
+    color: var(--cherry);
+    background: var(--cream);
+
+    border: 2px solid var(--beige);
+    border-radius: 999px;
+
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 500;
+
+    transition: .15s;
+}
+
+.role-tab b {
+    min-width: 20px;
+    height: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cherry);
+    background: var(--beige);
+
+    border-radius: 50%;
+    font-size: .7rem;
+}
+
+.role-tab:hover {
+    background: var(--candy-pale);
+    border-color: var(--candy);
+    transform: translateY(-2px);
+}
+
+.role-tab.on {
+    color: var(--beige);
+    background: var(--red);
+    border-color: var(--cherry);
+}
+
+.role-tab.on b {
+    color: var(--cherry);
+    background: var(--candy);
+}
+
+
+/* ==============================
+   TABLE WRAPPER
+============================== */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 2px solid var(--beige);
+    border-radius: 16px;
+}
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tbl th {
+    padding: 13px 15px;
+
+    color: var(--cherry);
+    background: var(--beige-light);
+
+    border-bottom: 2px solid var(--beige);
+
+    font-size: .78rem;
+    font-weight: 600;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tbl td {
+    padding: 13px 15px;
+
+    color: var(--cherry);
+
+    border-bottom: 1px solid var(--beige);
+
+    font-size: .84rem;
+}
+
+.tbl tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tbl tbody tr {
+    transition: background .15s;
+}
+
+.tbl tbody tr:hover {
+    background: var(--candy-pale);
+}
+
+.tbl .right {
+    text-align: right;
+}
+
+
+/* ==============================
+   USER / PRODUK CELL
+============================== */
+
+.produk-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 220px;
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--cherry);
+    background: var(--candy);
+
+    border: 2px solid var(--cherry);
+    border-radius: 13px;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.produk-info {
+    min-width: 0;
+}
+
+.produk-info b {
+    display: block;
+
+    color: var(--cherry);
+
+    font-size: .88rem;
+}
+
+.produk-info small {
+    display: block;
+
+    margin-top: 1px;
+
+    color: rgba(100, 13, 20, .58);
+
+    font-size: .76rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.me-tag {
+    display: inline-block;
+
+    margin-left: 5px;
+    padding: 2px 7px;
+
+    color: var(--cherry);
+    background: var(--beige);
+
+    border: 1px solid var(--cherry);
+    border-radius: 999px;
+
+    font-size: .65rem;
+    font-weight: 500;
+}
+
+
+/* ==============================
+   CONTACT
+============================== */
+
+.kontak {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    min-width: 160px;
+}
+
+.kontak span {
+    font-size: .82rem;
+}
+
+.kontak small {
+    color: rgba(100, 13, 20, .58);
+    font-size: .74rem;
+}
+
+
+/* ==============================
+   ROLE BADGE
+============================== */
+
+.role-pill {
+    display: inline-block;
+
+    padding: 4px 11px;
+
+    border: 1.5px solid;
+    border-radius: 999px;
+
+    font-size: .74rem;
+    font-weight: 500;
+}
+
+.rb-admin {
+    color: var(--cherry);
+    background: var(--candy);
+    border-color: var(--cherry);
+}
+
+.rb-manager {
+    color: #7A4B00;
+    background: #FBE7C2;
+    border-color: #D8973C;
+}
+
+.rb-staff {
+    color: #8A252D;
+    background: #FFD9DC;
+    border-color: var(--red);
+}
+
+.rb-buyer {
+    color: #795A00;
+    background: var(--beige);
+    border-color: var(--apricot);
+}
+
+
+/* ==============================
+   ACTION
+============================== */
+
+.row-aksi {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.row-aksi form {
+    display: inline;
+}
+
+
+/* ==============================
+   EMPTY STATE
+============================== */
+
+.empty {
+    padding: 45px 20px;
+
+    color: rgba(100, 13, 20, .58);
+
+    text-align: center;
+    font-size: .9rem;
+}
+
+
+/* ==============================
+   DIALOG / MODAL
+============================== */
+
+.dialog {
+    width: min(480px, 92vw);
+    max-height: 92vh;
+
+    margin: auto;
+    padding: 24px;
+
+    overflow-y: auto;
+
+    color: var(--cherry);
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 24px;
+
+    box-shadow: 6px 6px 0 var(--candy);
+}
+
+.dialog::backdrop {
+    background: rgba(100, 13, 20, .5);
+}
+
+.dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.dialog-head h2 {
+    color: var(--red);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.dialog-x {
+    width: 34px;
+    height: 34px;
+
+    color: var(--cherry);
+    background: transparent;
+
+    border: 2px solid var(--cherry);
+    border-radius: 10px;
+
+    font-family: inherit;
+    cursor: pointer;
+
+    transition: .15s;
+}
+
+.dialog-x:hover {
+    color: white;
+    background: var(--red);
+}
+
+
+/* ==============================
+   FORM
+============================== */
+
+.field {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.field span {
+    display: block;
+    margin-bottom: 5px;
+
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.field em {
+    color: rgba(100, 13, 20, .55);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.field input,
+.field textarea,
+.field select {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    color: var(--cherry);
+    background: var(--cream);
+
+    border: 2px solid var(--beige);
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: .92rem;
+
+    outline: 0;
+
+    transition: .15s;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+    background: white;
+    border-color: var(--candy);
+    box-shadow: 0 0 0 3px var(--candy-pale);
+}
+
+.field textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+.field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.dialog-foot {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 6px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 1050px) {
+    .stat-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .tbl {
+        min-width: 800px;
+    }
+
+    .panel {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 640px) {
+    .stat-row {
+        grid-template-columns: 1fr;
+    }
+
+    .field-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .role-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 12px;
+    }
+
+    .role-tab {
+        flex-shrink: 0;
+    }
+
+    .dialog {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .dialog-foot {
+        flex-direction: column-reverse;
+    }
+
+    .dialog-foot .btn {
+        width: 100%;
+    }
+}

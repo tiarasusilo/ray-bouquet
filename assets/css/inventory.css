@@ -1,0 +1,570 @@
+/* ==============================
+   HALAMAN INVENTORY
+
+   dipakai bersama dashboard.css
+============================== */
+
+
+/* ---------- header ---------- */
+
+.inventory-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.inventory-head h1 {
+    color: var(--red);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+}
+
+.inventory-head p {
+    color: rgba(100, 13, 20, .6);
+    font-size: .88rem;
+    margin: 0;
+}
+
+
+/* ---------- tombol ---------- */
+
+.btn {
+    height: 40px;
+    padding: 0 18px;
+
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+
+    border: 2px solid var(--cherry);
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform .15s,
+        background .15s,
+        color .15s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    height: 32px;
+    padding: 0 12px;
+    font-size: .8rem;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    color: var(--cherry);
+    background: var(--candy);
+    box-shadow: 3px 3px 0 var(--beige);
+}
+
+.btn-primary:hover {
+    background: var(--candy-light);
+}
+
+.btn-ghost {
+    color: var(--cherry);
+    background: white;
+}
+
+.btn-ghost:hover {
+    background: var(--beige-light);
+}
+
+.btn-danger {
+    color: var(--red);
+    background: white;
+    border-color: var(--red);
+}
+
+.btn-danger:hover {
+    color: white;
+    background: var(--red);
+}
+
+
+/* ---------- ringkasan ---------- */
+
+.stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    padding: 16px 18px;
+
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 18px;
+
+    box-shadow: 4px 4px 0 var(--beige);
+}
+
+.stat-box small {
+    display: block;
+
+    color: rgba(100, 13, 20, .65);
+    font-size: .8rem;
+
+    margin-bottom: 4px;
+}
+
+.stat-box strong {
+    color: var(--red);
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.stat-box strong.warn {
+    color: #B87A22;
+}
+
+.stat-desc {
+    margin-top: 4px;
+
+    color: rgba(100, 13, 20, .55);
+    font-size: .76rem;
+}
+
+
+/* ---------- card inventory ---------- */
+
+.inventory-card {
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 20px;
+
+    box-shadow: 4px 4px 0 var(--beige);
+
+    overflow: hidden;
+}
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 22px;
+
+    border-bottom: 2px solid var(--beige);
+}
+
+.card-heading h2 {
+    margin: 0 0 4px;
+
+    color: var(--red);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.card-heading p {
+    margin: 0;
+
+    color: rgba(100, 13, 20, .55);
+    font-size: .8rem;
+}
+
+
+/* ---------- tabel ---------- */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.inventory-tbl {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-tbl th {
+    padding: 13px 16px;
+
+    color: rgba(100, 13, 20, .65);
+    background: var(--cream);
+
+    font-size: .76rem;
+    font-weight: 600;
+    text-align: left;
+
+    white-space: nowrap;
+
+    border-bottom: 2px solid var(--beige);
+}
+
+.inventory-tbl td {
+    padding: 14px 16px;
+
+    color: var(--cherry);
+    font-size: .84rem;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid var(--beige-light);
+}
+
+.inventory-tbl tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.inventory-tbl tbody tr:hover {
+    background: var(--beige-light);
+}
+
+
+/* ---------- nama item ---------- */
+
+.inventory-name {
+    min-width: 180px;
+}
+
+.inventory-name b {
+    display: block;
+
+    color: var(--cherry);
+    font-weight: 600;
+}
+
+.inventory-name small {
+    display: block;
+
+    color: rgba(100, 13, 20, .55);
+    font-size: .76rem;
+
+    margin-top: 2px;
+}
+
+
+/* ---------- kategori ---------- */
+
+.kat-chip {
+    display: inline-block;
+
+    padding: 3px 11px;
+
+    color: var(--cherry);
+    background: var(--candy-pale);
+
+    border: 1px solid var(--candy);
+    border-radius: 999px;
+
+    font-size: .76rem;
+    font-weight: 500;
+}
+
+
+/* ---------- stok ---------- */
+
+.stok-number {
+    color: var(--cherry);
+    font-weight: 600;
+}
+
+.satuan {
+    color: rgba(100, 13, 20, .6);
+    font-size: .8rem;
+}
+
+
+/* ---------- status stok ---------- */
+
+.stok-pill {
+    display: inline-block;
+
+    padding: 4px 12px;
+
+    border-radius: 999px;
+
+    font-size: .76rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.stok-pill.aman {
+    color: #1d6b35;
+    background: #DDF3E2;
+}
+
+.stok-pill.tipis {
+    color: #8a5a10;
+    background: #FBE7C2;
+}
+
+.stok-pill.habis {
+    color: var(--red);
+    background: #FFD9DC;
+}
+
+
+/* ---------- aksi ---------- */
+
+.row-aksi {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.row-aksi form {
+    display: inline;
+    margin: 0;
+}
+
+
+/* ---------- empty state ---------- */
+
+.empty-state {
+    padding: 45px 20px !important;
+
+    color: rgba(100, 13, 20, .5);
+
+    text-align: center;
+}
+
+
+/* ---------- flash ---------- */
+
+.flash {
+    margin-bottom: 18px;
+    padding: 12px 16px;
+
+    border: 2px solid;
+    border-radius: 14px;
+
+    font-size: .9rem;
+}
+
+.flash-ok {
+    color: #1d6b35;
+    background: #E6F6EA;
+    border-color: #9ED3AC;
+}
+
+.flash-error {
+    color: var(--red);
+    background: var(--candy-pale);
+    border-color: var(--candy);
+}
+
+
+/* ==============================
+   MODAL
+============================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(100, 13, 20, .5);
+}
+
+.modal.show {
+    display: flex;
+}
+
+
+/* ---------- kotak modal ---------- */
+
+.modal-box {
+    width: min(480px, 92vw);
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    padding: 24px;
+
+    color: var(--cherry);
+    background: white;
+
+    border: 3px solid var(--cherry);
+    border-radius: 24px;
+
+    box-shadow: 6px 6px 0 var(--candy);
+}
+
+
+/* ---------- header modal ---------- */
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+
+    color: var(--red);
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.modal-header p {
+    margin: 4px 0 0;
+
+    color: rgba(100, 13, 20, .55);
+
+    font-size: .8rem;
+}
+
+
+/* ---------- tombol close ---------- */
+
+.modal-close {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    color: var(--cherry);
+    background: transparent;
+
+    border: 2px solid var(--cherry);
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 1.1rem;
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: white;
+    background: var(--cherry);
+}
+
+
+/* ==============================
+   FORM MODAL
+============================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--cherry);
+
+    font-size: .85rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 12px;
+
+    color: var(--cherry);
+    background: var(--cream);
+
+    border: 2px solid var(--beige);
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: .9rem;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--candy);
+}
+
+
+/* ---------- footer modal ---------- */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 700px) {
+
+    .inventory-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .inventory-head .btn {
+        width: 100%;
+    }
+
+    .stat-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+
+    .modal {
+        padding: 14px;
+    }
+
+    .modal-box {
+        width: 100%;
+        max-height: 94vh;
+        padding: 20px;
+    }
+
+}

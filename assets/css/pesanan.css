@@ -1,0 +1,633 @@
+/* =========================================================
+   PESANAN
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap');
+
+.order-hero {
+    padding-bottom: 38px;
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.order-wrap {
+    position: relative;
+    z-index: 1;
+
+    width: min(1000px, 92%);
+
+    margin: 0 auto 45px;
+}
+
+
+/* =========================================================
+   FILTER
+========================================================= */
+
+.order-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 28px;
+}
+
+.filter-btn {
+    padding: 7px 18px;
+    font-size: .92rem;
+    font-weight: 500;
+    color: var(--cherry);
+    background: var(--beige);
+    border: 2px solid var(--cherry);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform .12s, box-shadow .12s, background .12s;
+}
+
+.filter-btn:hover {
+    background: var(--candy);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    color: var(--beige);
+    background: var(--red);
+    box-shadow: 0 4px 0 var(--cherry);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.order-card {
+    background: #fff;
+
+    border: 2.5px solid var(--cherry);
+    border-radius: 20px;
+
+    padding: 18px 20px;
+
+    box-shadow: 4px 4px 0 var(--beige);
+
+    transition:
+        transform .15s,
+        box-shadow .15s;
+}
+
+
+.order-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        6px 6px 0 var(--beige);
+}
+
+
+/* =========================================================
+   CARD HEADER
+========================================================= */
+
+.order-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding-bottom: 13px;
+
+    border-bottom: 2px dashed var(--beige);
+}
+
+
+.order-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: rgba(100, 13, 20, .55);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .7px;
+}
+
+
+.order-card-head h2 {
+    margin: 0;
+
+    color: var(--cherry);
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+.order-date {
+    text-align: right;
+}
+
+
+.order-date span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: rgba(100, 13, 20, .55);
+
+    font-size: 10px;
+}
+
+
+.order-date strong {
+    color: var(--red);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BOUQUET
+========================================================= */
+
+.order-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 15px 0;
+}
+
+
+.order-product {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 220px;
+}
+
+
+.order-product img,
+.product-noimg {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border: 2px solid var(--cherry);
+    border-radius: 12px;
+}
+
+
+.product-noimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--candy-light);
+
+    color: var(--cherry);
+
+    font-size: 22px;
+}
+
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.product-info strong {
+    color: var(--red);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.product-info span {
+    color: rgba(100, 13, 20, .6);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.order-status {
+    padding: 13px 14px;
+
+    background: var(--candy-pale);
+
+    border: 2px solid var(--candy-light);
+    border-radius: 15px;
+}
+
+
+.status-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 13px;
+}
+
+
+.status-heading span {
+    color: rgba(100, 13, 20, .6);
+
+    font-size: 11px;
+}
+
+
+.status-heading strong {
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* status colors */
+
+.status-heading strong.waiting {
+    background: #fff0d2;
+    color: #9a6200;
+}
+
+
+.status-heading strong.process {
+    background: #e9e4ff;
+    color: #6551a8;
+}
+
+
+.status-heading strong.arrange {
+    background: #ffe2ed;
+    color: var(--red);
+}
+
+
+.status-heading strong.shipping {
+    background: #e0f0ff;
+    color: #39749f;
+}
+
+
+.status-heading strong.done {
+    background: #e0f4df;
+    color: #477344;
+}
+
+
+/* =========================================================
+   TRACKING
+========================================================= */
+
+.tracking {
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+}
+
+
+.track-step {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 70px;
+
+    text-align: center;
+}
+
+
+.track-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    height: 18px;
+
+    margin-bottom: 5px;
+
+    border: 2px solid var(--beige);
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #fff;
+
+    font-size: 8px;
+
+    box-sizing: border-box;
+}
+
+
+.track-step span {
+    color: rgba(100, 13, 20, .45);
+
+    font-size: 8px;
+    line-height: 1.2;
+}
+
+
+.track-step.done .track-dot {
+    border-color: var(--red);
+
+    background: var(--red);
+}
+
+
+.track-step.done span {
+    color: var(--red);
+}
+
+
+.track-step.current .track-dot {
+    border-color: var(--cherry);
+
+    background: var(--candy);
+
+    color: var(--cherry);
+
+    box-shadow: 0 0 0 3px var(--candy-light);
+}
+
+
+.track-step.current span {
+    color: var(--cherry);
+
+    font-weight: 600;
+}
+
+
+.track-line {
+    flex: 1;
+
+    height: 2px;
+
+    margin-top: 8px;
+
+    background: var(--beige);
+}
+
+
+.track-line.done {
+    background: var(--red);
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.order-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 15px;
+    padding-top: 13px;
+
+    border-top: 2px dashed var(--beige);
+}
+
+
+.order-total {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.order-total span {
+    color: rgba(100, 13, 20, .55);
+
+    font-size: 11px;
+}
+
+
+.order-total strong {
+    color: var(--red);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.order-detail-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    background: var(--cherry);
+    color: var(--beige);
+
+    border: 2px solid var(--cherry);
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        background .15s,
+        transform .15s;
+}
+
+
+.order-detail-btn span {
+    font-size: 15px;
+    line-height: 1;
+}
+
+
+.order-detail-btn:hover {
+    background: var(--red);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty-order {
+    padding: 55px 20px;
+
+    text-align: center;
+
+    background: #fff;
+
+    border: 2.5px solid var(--cherry);
+    border-radius: 22px;
+
+    box-shadow: 5px 5px 0 var(--beige);
+}
+
+
+.empty-flower {
+    margin-bottom: 8px;
+
+    color: var(--candy);
+
+    font-size: 42px;
+}
+
+
+.empty-order h2 {
+    margin: 0 0 6px;
+
+    color: var(--cherry);
+
+    font-size: 22px;
+}
+
+
+.empty-order p {
+    margin: 0 0 18px;
+
+    color: rgba(100, 13, 20, .65);
+
+    font-size: 13px;
+}
+
+
+.order-btn {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background: var(--red);
+    color: var(--beige);
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .order-card {
+        padding: 15px;
+    }
+
+
+    .order-card-head {
+        gap: 10px;
+    }
+
+
+    .order-products {
+        flex-direction: column;
+    }
+
+
+    .order-product {
+        min-width: 0;
+    }
+
+
+    .tracking {
+        overflow-x: auto;
+        padding-bottom: 3px;
+    }
+
+
+    .track-step {
+        min-width: 62px;
+    }
+
+
+    .order-card-bottom {
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .order-card-head {
+        flex-direction: column;
+    }
+
+
+    .order-date {
+        text-align: left;
+    }
+
+
+    .order-card-bottom {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .order-detail-btn {
+        justify-content: center;
+    }
+
+
+    .order-filter {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: center;
+        padding-bottom: 4px;
+    }
+
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+}
